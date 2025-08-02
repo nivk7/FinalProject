@@ -47,31 +47,31 @@ Troubleshooting Docker container networking and volume mounting was necessary to
 ---
 # Project Requirements
 
-Set up the basic environment using Docker:
+1.Set up the basic environment using Docker:
 
 We were asked to install and configure the core components of the project using Docker containers.
 
-Configure Joomla:
+2.Configure Joomla:
 
 We needed to perform the initial configuration of the Joomla CMS inside the containerized environment.
 
-Run Joomla and add initial content:
+3.Run Joomla and add initial content:
 
 We were instructed to start the Joomla service and add basic content to the website (e.g. articles).
 
-Back up the website and database:
+4.Back up the website and database:
 
 We were required to create backups of the site files and the MySQL database to preserve the project state.
 
-Restore the database from backup:
+5.Restore the database from backup:
 
 As part of the testing process, we had to verify that the database backup could be successfully restored.
 
-Write shell scripts for automation:
+6.Write shell scripts for automation:
 
 We were asked to write Bash scripts to automate setup, backup, restore, and cleanup processes.
 
-Save the project on GitHub:
+7.Save the project on GitHub:
 
 The final step was to upload all project files, including scripts and the Docker configuration, to a Git repository.
 
