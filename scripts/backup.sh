@@ -1,10 +1,10 @@
 #!/bin/bash
 
-# יצירת תיקיית גיבוי
+# Create backup directory
 mkdir -p ./backup
 
-# העתקת קבצים מהרשאה משותפת (volume) לתיקיית הגיבוי
-docker cp db_container:/var/lib/mysql ./backup
+# Copy MySQL data from the container to the backup folder
+docker cp mysql-container:/var/lib/mysql ./backup
 
-# הודעה למשתמש
-echo "הגיבוי הושלם בהצלחה."
+# Notify the user
+echo "Backup completed successfully."
