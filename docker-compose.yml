@@ -1,0 +1,43 @@
+services:
+  db:
+    image: mysql
+    container_name: mysql-container
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: my-secret-pw
+      MYSQL_DATABASE: joomla
+      MYSQL_USER: mysql_user
+      MYSQL_PASSWORD: mysql_pass
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+    networks:
+      - projectnetwork
+
+  joomla:
+    image: joomla
+    container_name: joomla-container
+    depends_on:
+      - db
+    ports:
+      - "8080:80"
+    restart: always
+    environment:
+      JOOMLA_DB_HOST: db
+      JOOMLA_DB_USER: mysql_user
+      JOOMLA_DB_PASSWORD: mysql_pass
+      JOOMLA_DB_NAME: joomla
+    volumes:
+      - joomla_data:/var/www/html
+    networks:
+      - projectnetwork
+
+volumes:
+    mysql_data:
+    joomla_data:
+
+networks:
+  projectnetwork:
+    external: true
+    name: ProjectNetwork
